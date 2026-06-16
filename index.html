@@ -142,64 +142,143 @@ body {
   text-align: center;
   padding: 100px 20px 60px;
 }
-.hero h1 {
-  font-size: clamp(48px, 10vw, 100px);
+
+/* ===== HERO TITLE BOX — LUXURY REVEAL ===== */
+.hero-title-box {
+  text-align: center;
+  padding: 70px 20px 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.restaurant-title {
+  font-size: clamp(42px, 8vw, 86px);
   font-weight: 900;
-  color: #fff;
-  letter-spacing: 6px;
-  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
-  animation: heroGlow 3s ease-in-out infinite alternate;
-  transition: transform 0.1s ease-out;
-}
-@keyframes heroGlow {
-  0% { text-shadow: 0 4px 30px rgba(0,0,0,0.5), 0 0 40px rgba(212,168,75,0.1); }
-  100% { text-shadow: 0 4px 40px rgba(0,0,0,0.6), 0 0 80px rgba(212,168,75,0.2); }
-}
-.hero-rest {
-  font-size: clamp(42px, 9vw, 90px) !important;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: 4px;
-  text-shadow: 0 4px 40px rgba(0,0,0,0.6);
-  will-change: transform;
-}
-.hero-rest-ar {
-  font-size: clamp(28px, 5vw, 55px);
-  font-weight: 300;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 2px;
-  margin-top: 2px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-  will-change: transform;
-}
-.hero-divider {
-  margin: 18px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-.hero-divider span {
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  border-radius: 2px;
-}
-.hero-menu-name {
-  font-size: clamp(20px, 3vw, 36px);
-  font-weight: 600;
-  color: var(--gold);
+  color: #ffffff;
   letter-spacing: 8px;
-  text-transform: uppercase;
-  text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+  line-height: 1.15;
+  margin: 0;
+  text-transform: capitalize;
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.35),
+    0 0 22px rgba(214,168,80,0.45);
 }
-.hero-menu-name-ar {
-  font-size: clamp(14px, 2vw, 22px);
-  font-weight: 400;
-  color: rgba(255,215,120,0.4);
-  letter-spacing: 3px;
-  margin-top: 4px;
+
+.restaurant-title .word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.restaurant-title .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(35px) scale(0.75) rotate(5deg);
+  filter: blur(8px);
+}
+
+.restaurant-title.is-animated .char {
+  animation: luxuryTextReveal 0.75s cubic-bezier(.2,.8,.2,1) forwards;
+  animation-delay: calc(var(--char-index) * 0.045s);
+}
+
+@keyframes luxuryTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(0.75) rotate(5deg);
+    filter: blur(8px);
+    text-shadow: none;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.08) rotate(0deg);
+    filter: blur(0);
+    text-shadow:
+      0 0 12px rgba(255,255,255,0.7),
+      0 0 28px rgba(214,168,80,0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+    filter: blur(0);
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.35),
+      0 0 22px rgba(214,168,80,0.45);
+  }
+}
+
+.restaurant-arabic {
+  margin: 22px 0 0;
+  font-size: clamp(24px, 4vw, 42px);
+  color: rgba(255,255,255,0.72);
+  font-weight: 500;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-title-box.is-animated .restaurant-arabic {
+  animation: arabicFadeUp 1s ease forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes arabicFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-brand-title {
+  margin: 70px 0 0;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: 14px;
+  color: #d6a850;
+  text-shadow: 0 0 18px rgba(214,168,80,0.45);
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.hero-title-box.is-animated .menu-brand-title {
+  animation: brandFadeUp 0.9s ease forwards;
+  animation-delay: 1.25s;
+}
+
+.menu-brand-arabic {
+  margin: 18px 0 0;
+  font-size: clamp(18px, 3vw, 28px);
+  color: rgba(214,168,80,0.8);
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.hero-title-box.is-animated .menu-brand-arabic {
+  animation: brandFadeUp 0.9s ease forwards;
+  animation-delay: 1.45s;
+}
+
+@keyframes brandFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.restaurant-title.gold-glow {
+  animation: headerGlowPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes headerGlowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.35),
+      0 0 18px rgba(214,168,80,0.35);
+  }
+  50% {
+    text-shadow:
+      0 0 14px rgba(255,255,255,0.65),
+      0 0 34px rgba(214,168,80,0.8);
+  }
 }
 .hero-scroll {
   margin-top: 50px;
@@ -569,6 +648,15 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
+  .restaurant-title {
+    letter-spacing: 5px;
+  }
+  .menu-brand-title {
+    letter-spacing: 8px;
+  }
+  .hero-title-box {
+    padding-top: 55px;
+  }
   .hero { min-height: 80vh; padding: 80px 16px 40px; }
   .cat-section { margin: 16px 0; border-radius: 16px; }
   .menu-item { padding: 8px 10px; gap: 8px; }
@@ -609,11 +697,20 @@ body {
 
 <!-- ===== HERO ===== -->
 <div class="hero">
-  <h1 class="hero-rest" id="heroRest">Thai House Rest.</h1>
-  <h2 class="hero-rest-ar">مطعم تاي هاوس</h2>
-  <div class="hero-divider"><span></span></div>
-  <div class="hero-menu-name">Tom Yum Kung</div>
-  <div class="hero-menu-name-ar">توم يوم كونغ</div>
+  <div class="hero-title-box">
+    <h1 class="restaurant-title animate-text" data-text="Thai House Restaurant">
+      Thai House Restaurant
+    </h1>
+    <p class="restaurant-arabic">
+      مطعم تاي هاوس
+    </p>
+    <h2 class="menu-brand-title">
+      TOM YUM KUNG
+    </h2>
+    <p class="menu-brand-arabic">
+      توم يوم كونغ
+    </p>
+  </div>
   <div class="hero-scroll"><span></span></div>
 </div>
 
@@ -8327,28 +8424,66 @@ document.querySelectorAll('.cat-section').forEach(card => {
   });
 });
 
+// ===== HERO ANIMATION — LUXURY TEXT REVEAL =====
+function splitTextIntoLetters(element) {
+  const text = element.dataset.text || element.textContent.trim();
+  element.innerHTML = "";
+  let charIndex = 0;
+  text.split(" ").forEach((word, wordIndex) => {
+    const wordSpan = document.createElement("span");
+    wordSpan.className = "word";
+    word.split("").forEach((char) => {
+      const charSpan = document.createElement("span");
+      charSpan.className = "char";
+      charSpan.textContent = char;
+      charSpan.style.setProperty("--char-index", charIndex);
+      wordSpan.appendChild(charSpan);
+      charIndex++;
+    });
+    element.appendChild(wordSpan);
+    if (wordIndex < text.split(" ").length - 1) {
+      element.appendChild(document.createTextNode(" "));
+      charIndex++;
+    }
+  });
+}
+
+function runHeroAnimation(heroBox) {
+  const title = heroBox.querySelector(".restaurant-title");
+  heroBox.classList.remove("is-animated");
+  title.classList.remove("is-animated", "gold-glow");
+  void heroBox.offsetWidth;
+  heroBox.classList.add("is-animated");
+  title.classList.add("is-animated");
+  setTimeout(() => { title.classList.add("gold-glow"); }, 2200);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const heroBox = document.querySelector(".hero-title-box");
+  const title = document.querySelector(".restaurant-title");
+  if (!heroBox || !title) return;
+  splitTextIntoLetters(title);
+  runHeroAnimation(heroBox);
+  let lastScrollY = window.scrollY;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const currentScrollY = window.scrollY;
+      if (entry.isIntersecting && currentScrollY < lastScrollY) {
+        runHeroAnimation(heroBox);
+      }
+      lastScrollY = currentScrollY;
+    });
+  }, { threshold: 0.45 });
+  observer.observe(heroBox);
+  window.addEventListener("scroll", () => { lastScrollY = window.scrollY; }, { passive: true });
+});
+
 // ===== PARALLAX ON SCROLL =====
 window.addEventListener('scroll', function() {
   const scrolled = window.pageYOffset;
   const bg = document.getElementById('parallaxBg');
   if (bg) {
     bg.style.transform = 'translateY(' + (scrolled * 0.3) + 'px)';
-  }
-  // Animate restaurant name with scroll (parallax text)
-  const heroRest = document.getElementById('heroRest');
-  if (heroRest) {
-    const speed = 0.5;
-    const restAr = document.querySelector('.hero-rest-ar');
-    if (scrolled < window.innerHeight) {
-      const translateY = scrolled * speed;
-      const opacity = Math.max(0, 1 - (scrolled / (window.innerHeight * 0.6)));
-      heroRest.style.transform = 'translateY(' + translateY + 'px)';
-      heroRest.style.opacity = opacity;
-      if (restAr) {
-        restAr.style.transform = 'translateY(' + (translateY * 0.7) + 'px)';
-        restAr.style.opacity = opacity;
-      }
-    }
   }
 });
 </script>
