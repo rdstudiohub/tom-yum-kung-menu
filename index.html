@@ -130,6 +130,30 @@ body {
 }
 .top-bar .contact-top a:hover { color: var(--gold); }
 
+.top-bar .contact-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.top-bar .contact-icons a {
+  font-size: 18px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.6);
+  transition: all 0.3s;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.top-bar .contact-icons a:hover {
+  color: #fff;
+  background: rgba(212,168,75,0.2);
+  transform: scale(1.15);
+}
+
 /* ===== HERO SECTION ===== */
 .hero {
   position: relative;
@@ -571,6 +595,26 @@ body {
   color: rgba(255,255,255,0.35);
   margin-top: 4px;
 }
+.qr-contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+.qr-contact-links a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.3);
+  transition: all 0.3s;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+}
 
 /* ===== FOOTER ===== */
 .footer {
@@ -584,6 +628,32 @@ body {
   backdrop-filter: blur(10px);
 }
 .footer strong { color: var(--gold); font-weight: 600; }
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px 0;
+}
+.footer-icons a {
+  font-size: 22px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.4);
+  transition: all 0.3s;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.footer-icons a:hover {
+  color: #fff;
+  background: rgba(212,168,75,0.15);
+  border-color: rgba(212,168,75,0.2);
+  transform: translateY(-2px);
+}
 
 /* ===== SCROLL ANIMATIONS ===== */
 [data-aos] {
@@ -652,9 +722,10 @@ body {
 <div class="top-bar">
   <div class="brand">Tom Yum <span>Kung</span></div>
   <div class="brand-rest">Thai House Rest.</div>
-  <div class="contact-top">
-    <a href="tel:013 8892015">📞 013 8892015</a>
-    <a href="https://wa.me/0563317037" target="_blank">💬 056 331 7037</a>
+  <div class="contact-icons">
+    <a href="https://maps.app.goo.gl/G4sb8a5fVgvFBgnw9?g_st=ac" target="_blank" title="Location">📍</a>
+    <a href="tel:013 8892015" title="Call">📞</a>
+    <a href="https://wa.me/0563317037" target="_blank" title="WhatsApp">💬</a>
   </div>
 </div>
 
@@ -8289,6 +8360,11 @@ body {
     <div class="qr-text">
       <h3>📱 Scan to View Menu</h3>
       <p>امسح رمز QR لعرض القائمة على هاتفك</p>
+      <div class="qr-contact-links">
+        <a href="tel:013 8892015">📞</a>
+        <a href="https://wa.me/0563317037" target="_blank">💬</a>
+        <a href="https://maps.app.goo.gl/G4sb8a5fVgvFBgnw9?g_st=ac" target="_blank">📍</a>
+      </div>
     </div>
   </div>
 
@@ -8296,7 +8372,11 @@ body {
 
 <div class="footer">
   <strong>Tom Yum Kung</strong> — Thai House Rest. | مطعم تاي هاوس<br>
-  📞 013 8892015 | 💬 056 331 7037<br>
+  <div class="footer-icons">
+    <a href="https://maps.app.goo.gl/G4sb8a5fVgvFBgnw9?g_st=ac" target="_blank" title="Location">📍</a>
+    <a href="tel:013 8892015" title="Call">📞</a>
+    <a href="https://wa.me/0563317037" target="_blank" title="WhatsApp">💬</a>
+  </div>
   <span style="opacity:0.4">Powered by RD Studio</span>
 </div>
 
