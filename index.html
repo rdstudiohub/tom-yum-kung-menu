@@ -159,6 +159,8 @@ body {
   line-height: 1.15;
   margin: 0;
   text-transform: capitalize;
+  direction: ltr;
+  unicode-bidi: isolate;
   text-shadow:
     0 0 8px rgba(255,255,255,0.35),
     0 0 22px rgba(214,168,80,0.45);
@@ -222,42 +224,6 @@ body {
 }
 
 @keyframes arabicFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.menu-brand-title {
-  margin: 70px 0 0;
-  font-size: clamp(28px, 5vw, 48px);
-  font-weight: 800;
-  letter-spacing: 14px;
-  color: #d6a850;
-  text-shadow: 0 0 18px rgba(214,168,80,0.45);
-  opacity: 0;
-  transform: translateY(18px);
-}
-
-.hero-title-box.is-animated .menu-brand-title {
-  animation: brandFadeUp 0.9s ease forwards;
-  animation-delay: 1.25s;
-}
-
-.menu-brand-arabic {
-  margin: 18px 0 0;
-  font-size: clamp(18px, 3vw, 28px);
-  color: rgba(214,168,80,0.8);
-  opacity: 0;
-  transform: translateY(15px);
-}
-
-.hero-title-box.is-animated .menu-brand-arabic {
-  animation: brandFadeUp 0.9s ease forwards;
-  animation-delay: 1.45s;
-}
-
-@keyframes brandFadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
@@ -651,9 +617,6 @@ body {
   .restaurant-title {
     letter-spacing: 5px;
   }
-  .menu-brand-title {
-    letter-spacing: 8px;
-  }
   .hero-title-box {
     padding-top: 55px;
   }
@@ -698,17 +661,11 @@ body {
 <!-- ===== HERO ===== -->
 <div class="hero">
   <div class="hero-title-box">
-    <h1 class="restaurant-title animate-text" data-text="Thai House Restaurant">
+    <h1 class="restaurant-title animate-text" data-text="Thai House Restaurant" dir="ltr">
       Thai House Restaurant
     </h1>
     <p class="restaurant-arabic">
       مطعم تاي هاوس
-    </p>
-    <h2 class="menu-brand-title">
-      TOM YUM KUNG
-    </h2>
-    <p class="menu-brand-arabic">
-      توم يوم كونغ
     </p>
   </div>
   <div class="hero-scroll"><span></span></div>
