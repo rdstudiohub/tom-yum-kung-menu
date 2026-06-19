@@ -387,6 +387,40 @@ body {
   box-shadow: 0 12px 48px rgba(0,0,0,0.3);
 }
 
+/* ===== NOODLES GALLERY ===== */
+.noodles-gallery {
+  padding: 20px 24px 32px;
+}
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.gallery-img-wrap {
+  flex: 1 1 calc(25% - 12px);
+  min-width: 160px;
+  max-width: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,215,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-img-wrap:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(255,215,0,0.15);
+}
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 700px) {
+  .gallery-img-wrap { flex: 1 1 calc(50% - 12px); }
+  .gallery-img { height: 170px; }
+}
+
 /* ===== CATEGORY BANNER ===== */
 .cat-banner {
   width: 100%;
@@ -1857,17 +1891,22 @@ body {
         <span class="cat-count">27 items</span>
       </div>
       <div class="cat-items">
-        <div class="menu-item featured-item" data-aos="fade-up">
-      <div class="featured-heading">
-        <span class="item-name-ar">نودلز تايلندية</span>
-        <span class="item-name-en">Thai Noodles</span>
-      </div>
-      <div class="featured-body">
-        <div class="featured-img">
-          <img class="dish-img-featured" src="thai-noodles.jpg" alt="Thai Noodles نودلز تايلندية">
+        <div class="menu-item multi-size" data-aos="fade-up">
+      <div class="item-img-slot">
+        <div class="img-placeholder" title="📸 ATM - Add image for Thai Noodles">
+          <span class="pl-icon">📸</span>
+          <span class="pl-label">ATM</span>
         </div>
-        <div class="featured-sizes">
-          
+      </div>
+      <div class="item-info">
+        <div class="item-names">
+          <span class="item-name-ar">نودلز تايلندية</span>
+          <span class="item-name-en">Thai Noodles</span>
+        </div>
+        
+      </div>
+      <div class="item-sizes">
+        
     <table class="sz-table">
       <thead>
         <tr><th class="sz-th">M</th><th class="sz-th">L</th><th class="sz-th">S</th><th class="sz-th sz-th-last">Calories</th></tr>
@@ -1877,19 +1916,23 @@ body {
         <tr><td class="sz-td-cal">2390</td><td class="sz-td-cal">3260</td><td class="sz-td-cal">1420</td><td class="sz-td-label">Cal</td></tr>
       </tbody>
     </table>
+      </div>
+    </div><div class="menu-item multi-size" data-aos="fade-up">
+      <div class="item-img-slot">
+        <div class="img-placeholder" title="📸 ATM - Add image for Ban Thai Noodles">
+          <span class="pl-icon">📸</span>
+          <span class="pl-label">ATM</span>
         </div>
       </div>
-    </div><div class="menu-item featured-item" data-aos="fade-up">
-      <div class="featured-heading">
-        <span class="item-name-ar">نودلز بان تاي</span>
-        <span class="item-name-en">Ban Thai Noodles</span>
-      </div>
-      <div class="featured-body">
-        <div class="featured-img">
-          <img class="dish-img-featured" src="ban-thai-noodles.jpg" alt="Ban Thai Noodles نودلز بان تاي">
+      <div class="item-info">
+        <div class="item-names">
+          <span class="item-name-ar">نودلز بان تاي</span>
+          <span class="item-name-en">Ban Thai Noodles</span>
         </div>
-        <div class="featured-sizes">
-          
+        
+      </div>
+      <div class="item-sizes">
+        
     <table class="sz-table">
       <thead>
         <tr><th class="sz-th">M</th><th class="sz-th">L</th><th class="sz-th">S</th><th class="sz-th sz-th-last">Calories</th></tr>
@@ -1899,19 +1942,23 @@ body {
         <tr><td class="sz-td-cal">2390</td><td class="sz-td-cal">3260</td><td class="sz-td-cal">1420</td><td class="sz-td-label">Cal</td></tr>
       </tbody>
     </table>
+      </div>
+    </div><div class="menu-item multi-size" data-aos="fade-up">
+      <div class="item-img-slot">
+        <div class="img-placeholder" title="📸 ATM - Add image for Noodles Soy Sauce">
+          <span class="pl-icon">📸</span>
+          <span class="pl-label">ATM</span>
         </div>
       </div>
-    </div><div class="menu-item featured-item" data-aos="fade-up">
-      <div class="featured-heading">
-        <span class="item-name-ar">نودلز بصوص الصويا</span>
-        <span class="item-name-en">Noodles Soy Sauce</span>
-      </div>
-      <div class="featured-body">
-        <div class="featured-img">
-          <img class="dish-img-featured" src="noodles-soy-sauce.jpg" alt="Noodles Soy Sauce نودلز بصوص الصويا">
+      <div class="item-info">
+        <div class="item-names">
+          <span class="item-name-ar">نودلز بصوص الصويا</span>
+          <span class="item-name-en">Noodles Soy Sauce</span>
         </div>
-        <div class="featured-sizes">
-          
+        
+      </div>
+      <div class="item-sizes">
+        
     <table class="sz-table">
       <thead>
         <tr><th class="sz-th">M</th><th class="sz-th">L</th><th class="sz-th">S</th><th class="sz-th sz-th-last">Calories</th></tr>
@@ -1921,19 +1968,23 @@ body {
         <tr><td class="sz-td-cal">2390</td><td class="sz-td-cal">3260</td><td class="sz-td-cal">1420</td><td class="sz-td-label">Cal</td></tr>
       </tbody>
     </table>
+      </div>
+    </div><div class="menu-item multi-size" data-aos="fade-up">
+      <div class="item-img-slot">
+        <div class="img-placeholder" title="📸 ATM - Add image for Fried Sukiyaki">
+          <span class="pl-icon">📸</span>
+          <span class="pl-label">ATM</span>
         </div>
       </div>
-    </div><div class="menu-item featured-item" data-aos="fade-up">
-      <div class="featured-heading">
-        <span class="item-name-ar">سوكيياكي مقلي</span>
-        <span class="item-name-en">Fried Sukiyaki</span>
-      </div>
-      <div class="featured-body">
-        <div class="featured-img">
-          <img class="dish-img-featured" src="fried-sukiyaki.jpg" alt="Fried Sukiyaki سوكيياكي مقلي">
+      <div class="item-info">
+        <div class="item-names">
+          <span class="item-name-ar">سوكيياكي مقلي</span>
+          <span class="item-name-en">Fried Sukiyaki</span>
         </div>
-        <div class="featured-sizes">
-          
+        
+      </div>
+      <div class="item-sizes">
+        
     <table class="sz-table">
       <thead>
         <tr><th class="sz-th">M</th><th class="sz-th">L</th><th class="sz-th">S</th><th class="sz-th sz-th-last">Calories</th></tr>
@@ -1943,7 +1994,6 @@ body {
         <tr><td class="sz-td-cal">2390</td><td class="sz-td-cal">3260</td><td class="sz-td-cal">1420</td><td class="sz-td-label">Cal</td></tr>
       </tbody>
     </table>
-        </div>
       </div>
     </div><div class="menu-item multi-size" data-aos="fade-up">
       <div class="item-img-slot">
@@ -2077,6 +2127,25 @@ body {
       </div>
     </div>
       </div>
+      
+      <!-- Noodles Gallery -->
+      <div class="noodles-gallery" data-aos="fade-up">
+        <div class="gallery-row">
+          <div class="gallery-img-wrap">
+            <img src="noodles-gallery-1.jpg" alt="Noodles Gallery 1" class="gallery-img">
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="noodles-gallery-2.jpg" alt="Noodles Gallery 2" class="gallery-img">
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="noodles-gallery-3.jpg" alt="Noodles Gallery 3" class="gallery-img">
+          </div>
+          <div class="gallery-img-wrap">
+            <img src="noodles-gallery-4.jpg" alt="Noodles Gallery 4" class="gallery-img">
+          </div>
+        </div>
+      </div>
+      
     </div>
     <div class="cat-section" id="cat-5" data-aos="zoom-in-up">
       
